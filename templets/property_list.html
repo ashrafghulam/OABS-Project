@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Available Properties</h2>
+<div class="property-list">
+    {% for property in properties %}
+    <div class="property-card">
+        <img src="{{ property.image_url }}" alt="{{ property.title }}">
+        <h3>{{ property.title }}</h3>
+        <p>{{ property.location }} | ${{ property.price }}</p>
+        <a href="/properties/{{ property.id }}">View Details</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to 591 Clone</h1>
+</div>
+<div class="featured-properties">
+    <h2>Featured Properties</h2>
+    <div class="property-list">
+        {% for property in properties %}
+        <div class="property-card">
+            <img src="{{ property.image_url }}" alt="{{ property.title }}">
+            <h3>{{ property.title }}</h3>
+            <p>{{ property.location }} | ${{ property.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
